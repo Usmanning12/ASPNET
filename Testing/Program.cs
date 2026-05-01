@@ -18,11 +18,7 @@ builder.Services.AddScoped<IDbConnection>((s) =>
     return conn;
 });
 
-builder.Services.AddTransient<IProductRepository, ProductRepository>();
-
-
-
-builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddTransient<IProductRepository>();
 var app = builder.Build();
 
 
