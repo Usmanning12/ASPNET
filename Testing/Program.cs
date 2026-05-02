@@ -18,8 +18,7 @@ builder.Services.AddScoped<IDbConnection>((s) =>
     return conn;
 });
 
-builder.Services.AddTransient<IProductRepository>();
-var app = builder.Build();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
