@@ -28,16 +28,6 @@ namespace Testing.Controllers
             return View(product);
         }
 
-        public IActionResult UpdateProduct(int id)
-        {
-            Product prod = repo.GetProduct(id);
-            if (prod == null)
-            {
-                return View("ProductNotFound");
-            }
-
-            return View(prod);
-        }
 
         public IActionResult UpdateProduct(Product product)
         {
@@ -56,6 +46,13 @@ namespace Testing.Controllers
             repo.InsertProduct(productToInsert);
             return RedirectToAction("Index");
         }
+
+        public IActionResult DeleteProduct(Product product)
+        {
+            repo.DeleteProduct(product);
+            return RedirectToAction("Index");
+        }
+        
 
     }
 }
